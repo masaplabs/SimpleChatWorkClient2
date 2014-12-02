@@ -1,0 +1,41 @@
+/*
+ Localizable.strings
+ SimpleChatWorkClient2
+ 
+ Created by 川村真史 on 2014/12/01.
+ Copyright (c) 2014年 Masafumi Kawamura. All rights reserved.
+ */
+
+// タブ
+"Chats" = "交談";
+"Tasks" = "工作";
+"Contacts" = "聯絡人";
+"My" = "我的資訊";
+
+// チャットタブ
+"Add ChatRoom" = "建立交談";
+"Chat Room Member" = "交談成員";
+"Need ChatRoom Title" = "未輸入群組交談名";
+"Need ChatRoom Description" = "未輸入群組交談描述";
+"Information" = "資訊";
+"Files" = "檔案";
+
+// タスクタブ
+"Add Task" = "新增工作";
+"Assign To" = "負責人";
+"Task Detail" = "工作內容";
+"Limit Date" = "期限";
+"Need AssignTo" = "請選擇負責人";
+"Need Text" = "請輸入工作內容";
+
+// コンタクトタブ
+
+// マイタブ
+
+// ボタン
+"Close" = "關閉";
+"Done" = "確定";
+"Edit" = "編輯";
+"Cancel" = "取消";
+"Complete" = "完成";
+"Send" = "傳送";

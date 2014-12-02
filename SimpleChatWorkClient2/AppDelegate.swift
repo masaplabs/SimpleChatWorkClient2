@@ -10,13 +10,62 @@ import UIKit
 import CoreData
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegate {
 
     var window: UIWindow?
+    var currentSelectedIndex: Int = 0
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+        // ナビゲーションバー・ステータスバー・タブバーの色を変更
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
+        
+        let navigationBarAppearance = UINavigationBar.appearance()
+        let tabBarAppearance = UITabBar.appearance()
+        let tabBarItemAppearance = UITabBarItem.appearance()
+        let normalColorDict: NSDictionary = [NSForegroundColorAttributeName: UIColor(rgba: "#ffffff")]
+        let selectedColorDict: NSDictionary = [NSForegroundColorAttributeName: UIColor(rgba: "#C1251E")]
+        
+        navigationBarAppearance.barTintColor = UIColor(rgba: "#333333")
+        navigationBarAppearance.tintColor = UIColor(rgba: "#C1251E")
+        navigationBarAppearance.alpha = 1.0
+        navigationBarAppearance.translucent = false
+        navigationBarAppearance.titleTextAttributes = normalColorDict
+        
+        tabBarAppearance.barTintColor = UIColor(rgba: "#333333")
+        tabBarAppearance.tintColor = UIColor(rgba: "#C1251E")
+        tabBarAppearance.alpha = 1.0
+        tabBarAppearance.translucent = false
+        tabBarItemAppearance.setTitleTextAttributes(normalColorDict, forState: .Normal)
+        tabBarItemAppearance.setTitleTextAttributes(selectedColorDict, forState: .Selected)
+        
+        // 背景を指定
+        self.window?.backgroundColor = UIColor.blackColor()
+        
+        // TabBarController 指定
+        var tabBarController: UITabBarController = UITabBarController()
+        tabBarController.delegate = self
+        
+        // NavigationController を指定
+        var chatNavigationController = UINavigationController(rootViewController: ChatsViewController())
+        
+        var taskNavigationController = UINavigationController(rootViewController: TasksViewController())
+        
+        var contactNavigationController = UINavigationController(rootViewController: ContactsViewController())
+        
+        var myNavigationController = UINavigationController(rootViewController: ProfileViewController())
+        
+        // TabBarController に NavigationController をセットする
+        tabBarController.setViewControllers([chatNavigationController, taskNavigationController, contactNavigationController, myNavigationController], animated: true)
+        
+        // window にセットする
+        self.window?.rootViewController = tabBarController
+        self.window?.makeKeyAndVisible()
+        
         return true
     }
 
@@ -55,7 +104,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     lazy var managedObjectModel: NSManagedObjectModel = {
         // The managed object model for the application. This property is not optional. It is a fatal error for the application not to be able to find and load its model.
         let modelURL = NSBundle.mainBundle().URLForResource("SimpleChatWorkClient2", withExtension: "momd")!
-        return NSManagedObjectModel(contentsOfURL: modelURL)
+        return NSManagedObjectModel(contentsOfURL: modelURL)!
     }()
 
     lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator? = {
@@ -72,7 +121,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             dict[NSLocalizedDescriptionKey] = "Failed to initialize the application's saved data"
             dict[NSLocalizedFailureReasonErrorKey] = failureReason
             dict[NSUnderlyingErrorKey] = error
-            error = NSError.errorWithDomain("YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict)
+            error = NSError(domain: "YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict)
             // Replace this with code to handle the error appropriately.
             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
             NSLog("Unresolved error \(error), \(error!.userInfo)")
@@ -106,6 +155,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+    
+    // MARK: - UITabBarControllerDelegate
 
+    // タブをタップしたときのイベントを取得
+    func tabBarController(tabBarController: UITabBarController, didSelectViewController viewController: UIViewController) {
+        // 現在開いているタブをタップしたときのみイベントを発火
+        if (currentSelectedIndex == tabBarController.selectedIndex) {
+            let controller: UIViewController = viewController.childViewControllers[0] as UIViewController
+            controller.tappedTab()
+        }
+        
+        currentSelectedIndex = tabBarController.selectedIndex
+    }
 }
 

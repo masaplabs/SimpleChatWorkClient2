@@ -8,7 +8,7 @@
 
 import Foundation
 
-class NCWHelper {
+class NetHelper {
     typealias Pair = (String, AnyObject)
     
     /**
@@ -32,7 +32,7 @@ class NCWHelper {
     class func isMultiPart(params: NSDictionary) -> Bool {
         var isMultiPart = false
         for (_, value) in params {
-            if value is NCWData {
+            if value is NetData {
                 isMultiPart = true
                 break
             }
@@ -89,8 +89,8 @@ class NCWHelper {
             var valueType: String?
             var filenameClause = ""
             
-            if value is NCWData {
-                let netData = value as NCWData
+            if value is NetData {
+                let netData = value as NetData
                 valueData = netData.data
                 valueType = netData.mimeType.getString()
                 filenameClause = " filename=\"\(netData.filename)\""

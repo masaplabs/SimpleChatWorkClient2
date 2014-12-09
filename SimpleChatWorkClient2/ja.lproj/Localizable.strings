@@ -19,6 +19,8 @@
 "Need ChatRoom Description" = "チャットルーム概要を入力してください";
 "Information" = "チャットルーム概要";
 "Files" = "ファイル";
+"To" = "To";
+"Unread" = "未読";
 
 // タスクタブ
 "Add Task" = "タスク追加";

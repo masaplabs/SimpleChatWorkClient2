@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9A02C5B68A60AE72C483D06D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33D9BEE720F62532D9D1F2F0 /* libPods.a */; };
 		C306019E19FE3D5700CA34D4 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C306019D19FE3D5700CA34D4 /* KeychainService.swift */; };
+		C308F3EA1A359EDB0099E6B8 /* ChatRoomModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C308F3E91A359EDB0099E6B8 /* ChatRoomModelTests.swift */; };
 		C3181C8419EE5BA300F33984 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3181C8319EE5BA300F33984 /* ContactsViewController.swift */; };
 		C3181C8619EE799700F33984 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3181C8519EE799700F33984 /* ProfileViewController.swift */; };
 		C31CC67D19F79FE200F7AFBD /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31CC67C19F79FE200F7AFBD /* UIColorExtension.swift */; };
@@ -23,13 +24,12 @@
 		C3616F8B19D3C1940086EF97 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3616F8A19D3C1940086EF97 /* SignInViewController.swift */; };
 		C3616F9019D3C1940086EF97 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3616F8F19D3C1940086EF97 /* Images.xcassets */; };
 		C3616F9319D3C1940086EF97 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3616F9119D3C1940086EF97 /* LaunchScreen.xib */; };
-		C3616F9F19D3C1940086EF97 /* SimpleChatWorkClient2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3616F9E19D3C1940086EF97 /* SimpleChatWorkClient2Tests.swift */; };
 		C3616FAD19D3C4270086EF97 /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3616FAC19D3C4270086EF97 /* ChatsViewController.swift */; };
 		C3616FB019D3DE770086EF97 /* NCWHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3616FAF19D3DE770086EF97 /* NCWHttpClient.swift */; };
-		C3616FB219D3EB280086EF97 /* NCWResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3616FB119D3EB280086EF97 /* NCWResponseData.swift */; };
-		C3616FB419D3EF190086EF97 /* NCWRequestSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3616FB319D3EF190086EF97 /* NCWRequestSerialization.swift */; };
-		C3616FB619D3EF6B0086EF97 /* NCWHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3616FB519D3EF6B0086EF97 /* NCWHelper.swift */; };
-		C3616FB819D3EFE50086EF97 /* NCWData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3616FB719D3EFE50086EF97 /* NCWData.swift */; };
+		C3616FB219D3EB280086EF97 /* NetResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3616FB119D3EB280086EF97 /* NetResponseData.swift */; };
+		C3616FB419D3EF190086EF97 /* NetRequestSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3616FB319D3EF190086EF97 /* NetRequestSerialization.swift */; };
+		C3616FB619D3EF6B0086EF97 /* NetHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3616FB519D3EF6B0086EF97 /* NetHelper.swift */; };
+		C3616FB819D3EFE50086EF97 /* NetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3616FB719D3EFE50086EF97 /* NetData.swift */; };
 		C368D0631A2427B60013F8BB /* RoomMembersViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C368D0621A2427B60013F8BB /* RoomMembersViewCell.swift */; };
 		C36D3EB61A00E32A008A4F69 /* FrostedSidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36D3EB51A00E32A008A4F69 /* FrostedSidebar.swift */; };
 		C37221391A1AF31D00182279 /* ChatRoomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37221381A1AF31D00182279 /* ChatRoomModel.swift */; };
@@ -91,6 +91,7 @@
 		80D3984A956FAE05D0404546 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A279410598155342BD7AAADB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C306019D19FE3D5700CA34D4 /* KeychainService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
+		C308F3E91A359EDB0099E6B8 /* ChatRoomModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRoomModelTests.swift; sourceTree = "<group>"; };
 		C3181C8319EE5BA300F33984 /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		C3181C8519EE799700F33984 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C31CC67C19F79FE200F7AFBD /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
@@ -109,13 +110,12 @@
 		C3616F9219D3C1940086EF97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C3616F9819D3C1940086EF97 /* SimpleChatWorkClient2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleChatWorkClient2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3616F9D19D3C1940086EF97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C3616F9E19D3C1940086EF97 /* SimpleChatWorkClient2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleChatWorkClient2Tests.swift; sourceTree = "<group>"; };
 		C3616FAC19D3C4270086EF97 /* ChatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatsViewController.swift; sourceTree = "<group>"; };
 		C3616FAF19D3DE770086EF97 /* NCWHttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NCWHttpClient.swift; sourceTree = "<group>"; };
-		C3616FB119D3EB280086EF97 /* NCWResponseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NCWResponseData.swift; sourceTree = "<group>"; };
-		C3616FB319D3EF190086EF97 /* NCWRequestSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NCWRequestSerialization.swift; sourceTree = "<group>"; };
-		C3616FB519D3EF6B0086EF97 /* NCWHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NCWHelper.swift; sourceTree = "<group>"; };
-		C3616FB719D3EFE50086EF97 /* NCWData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NCWData.swift; sourceTree = "<group>"; };
+		C3616FB119D3EB280086EF97 /* NetResponseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetResponseData.swift; sourceTree = "<group>"; };
+		C3616FB319D3EF190086EF97 /* NetRequestSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetRequestSerialization.swift; sourceTree = "<group>"; };
+		C3616FB519D3EF6B0086EF97 /* NetHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetHelper.swift; sourceTree = "<group>"; };
+		C3616FB719D3EFE50086EF97 /* NetData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetData.swift; sourceTree = "<group>"; };
 		C368D0621A2427B60013F8BB /* RoomMembersViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomMembersViewCell.swift; sourceTree = "<group>"; };
 		C36D3EB51A00E32A008A4F69 /* FrostedSidebar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrostedSidebar.swift; sourceTree = "<group>"; };
 		C37221381A1AF31D00182279 /* ChatRoomModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRoomModel.swift; sourceTree = "<group>"; };
@@ -262,8 +262,8 @@
 		C3616F9B19D3C1940086EF97 /* SimpleChatWorkClient2Tests */ = {
 			isa = PBXGroup;
 			children = (
-				C3616F9E19D3C1940086EF97 /* SimpleChatWorkClient2Tests.swift */,
 				C3616F9C19D3C1940086EF97 /* Supporting Files */,
+				C308F3E91A359EDB0099E6B8 /* ChatRoomModelTests.swift */,
 			);
 			path = SimpleChatWorkClient2Tests;
 			sourceTree = "<group>";
@@ -310,10 +310,10 @@
 			isa = PBXGroup;
 			children = (
 				C3616FAF19D3DE770086EF97 /* NCWHttpClient.swift */,
-				C3616FB119D3EB280086EF97 /* NCWResponseData.swift */,
-				C3616FB319D3EF190086EF97 /* NCWRequestSerialization.swift */,
-				C3616FB519D3EF6B0086EF97 /* NCWHelper.swift */,
-				C3616FB719D3EFE50086EF97 /* NCWData.swift */,
+				C3616FB119D3EB280086EF97 /* NetResponseData.swift */,
+				C3616FB319D3EF190086EF97 /* NetRequestSerialization.swift */,
+				C3616FB519D3EF6B0086EF97 /* NetHelper.swift */,
+				C3616FB719D3EFE50086EF97 /* NetData.swift */,
 				C3A2825519D903C600BB2466 /* NCWAPIManager.swift */,
 			);
 			name = MobileKit;
@@ -323,8 +323,8 @@
 			isa = PBXGroup;
 			children = (
 				C37221381A1AF31D00182279 /* ChatRoomModel.swift */,
-				C3E1BCFB1A2C5FC600CFC15F /* MessageModel.swift */,
 				C372213A1A1B41BA00182279 /* ChatRoomListModel.swift */,
+				C3E1BCFB1A2C5FC600CFC15F /* MessageModel.swift */,
 				C39E4F031A26CE0700C9CA00 /* FileListModel.swift */,
 				C39E4F051A26CE1B00C9CA00 /* FileModel.swift */,
 			);
@@ -594,10 +594,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3616F8B19D3C1940086EF97 /* SignInViewController.swift in Sources */,
-				C3616FB219D3EB280086EF97 /* NCWResponseData.swift in Sources */,
+				C3616FB219D3EB280086EF97 /* NetResponseData.swift in Sources */,
 				C3E1BCE51A28494800CFC15F /* UIViewControllerExtension.swift in Sources */,
 				C3CA013919E7ECA70053C6A2 /* ChatRoomInformationViewController.swift in Sources */,
-				C3616FB819D3EFE50086EF97 /* NCWData.swift in Sources */,
+				C3616FB819D3EFE50086EF97 /* NetData.swift in Sources */,
 				C36D3EB61A00E32A008A4F69 /* FrostedSidebar.swift in Sources */,
 				C37F2E1C1A15FADA009E82EE /* AddChatRoomViewController.swift in Sources */,
 				C3EE7F071A1C46CE00E6F062 /* ContactListModel.swift in Sources */,
@@ -618,7 +618,7 @@
 				C33300231A08A9370086F533 /* ChooseContactTableViewController.swift in Sources */,
 				C373D39E19F11C9C00764703 /* TasksTableViewCell.swift in Sources */,
 				C32825321A022CC300F384CC /* AddTaskTableViewController.swift in Sources */,
-				C3616FB619D3EF6B0086EF97 /* NCWHelper.swift in Sources */,
+				C3616FB619D3EF6B0086EF97 /* NetHelper.swift in Sources */,
 				C380477F1A25DD7C00BEC275 /* LTMorphingLabel.swift in Sources */,
 				C3254B3B1A199503009A066D /* MeModel.swift in Sources */,
 				C38047831A25DDE400BEC275 /* LTEasing.swift in Sources */,
@@ -628,7 +628,7 @@
 				C39E4F001A26CCAD00C9CA00 /* FilesViewController.swift in Sources */,
 				C37221391A1AF31D00182279 /* ChatRoomModel.swift in Sources */,
 				C3616FB019D3DE770086EF97 /* NCWHttpClient.swift in Sources */,
-				C3616FB419D3EF190086EF97 /* NCWRequestSerialization.swift in Sources */,
+				C3616FB419D3EF190086EF97 /* NetRequestSerialization.swift in Sources */,
 				C3BFD4E319E5342600C7DDBD /* ChatsTableViewCell.swift in Sources */,
 				C3C4E8101A1EEB51000B978D /* RoomMembersViewController.swift in Sources */,
 				C3EE7F111A1C7DEE00E6F062 /* TaskListModel.swift in Sources */,
@@ -662,7 +662,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3616F9F19D3C1940086EF97 /* SimpleChatWorkClient2Tests.swift in Sources */,
+				C308F3EA1A359EDB0099E6B8 /* ChatRoomModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

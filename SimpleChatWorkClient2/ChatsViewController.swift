@@ -55,6 +55,12 @@ class ChatsViewController: UITableViewController, ChatsViewControllerDelegate {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 44
         
+        var refreshControl = UIRefreshControl()
+        refreshControl.attributedTitle = NSAttributedString(string: "Loading...")
+        refreshControl.addTarget(self, action: "pullToRefresh", forControlEvents: UIControlEvents.ValueChanged)
+        
+        self.refreshControl = refreshControl
+        
         if (NCWEnvironment().isLogin()) {
             // ローディング画面表示
             let controller: LoadingViewController = LoadingViewController()
@@ -141,8 +147,42 @@ class ChatsViewController: UITableViewController, ChatsViewControllerDelegate {
             let image = UIImage(named: "placeholder")
             
             cell.titleLabel?.text = title
-            cell.subtitleLabel?.text = "Subtitle No. \(indexPath.row)"
+            
+            cell.subtitleLabel?.textColor = UIColor(rgba: "#dddddd")
+            
+            // 未読数・メンション数・タスク数に応じて Subtitle を追加する
+            if (roomModel.unreadNumber > 0 || roomModel.mentionNumber > 0 || roomModel.myTaskNumber > 0) {
+                let labelFont = [NSForegroundColorAttributeName: UIColor.blackColor(), NSFontAttributeName: UIFont(name: "HelveticaNeue", size: 11)!]
+                let numberFont = [NSForegroundColorAttributeName: UIColor(rgba: "#C1251E"), NSFontAttributeName: UIFont(name: "HelveticaNeue", size: 11)!]
+                var attributedString = NSMutableAttributedString()
+                
+                if (roomModel.mentionNumber > 0) {
+                    attributedString.appendAttributedString(NSAttributedString(string: " " + NSLocalizedString("To", comment: "To") + ": ", attributes: labelFont))
+                    attributedString.appendAttributedString(NSAttributedString(string: String(roomModel.mentionNumber), attributes: numberFont))
+                }
+                
+                if (roomModel.unreadNumber > 0) {
+                    attributedString.appendAttributedString(NSAttributedString(string: " " + NSLocalizedString("Unread", comment: "未読") + ": ", attributes: labelFont))
+                    attributedString.appendAttributedString(NSAttributedString(string: String(roomModel.unreadNumber), attributes: numberFont))
+                }
+                
+                if (roomModel.myTaskNumber > 0) {
+                    attributedString.appendAttributedString(NSAttributedString(string: " " + NSLocalizedString("Tasks", comment: "タスク") + ": ", attributes: labelFont))
+                    attributedString.appendAttributedString(NSAttributedString(string: String(roomModel.myTaskNumber), attributes: numberFont))
+                }
+                
+                cell.subtitleLabel.attributedText = attributedString
+            } else {
+                cell.subtitleLabel?.text = "Subtitle No. \(indexPath.row)"
+            }
+            
             cell.roomIconView?.sd_setImageWithURL(NSURL(string: roomIconPath!), placeholderImage: image)
+            
+            if (roomModel.sticky == true) {
+                cell.pinIconView.image = UIImage(named: "pin_active")
+            } else {
+                cell.pinIconView.image = UIImage(named: "pin_off")
+            }
         }
     }
     
@@ -159,6 +199,12 @@ class ChatsViewController: UITableViewController, ChatsViewControllerDelegate {
         var controller = UINavigationController(rootViewController: rootViewController)
         
         self.presentViewController(controller, animated: true, completion: nil)
+    }
+    
+    // リフレッシュコントロール
+    func pullToRefresh() {
+        getRoomAndReloadTable()
+        refreshControl?.endRefreshing()
     }
     
     // MARK: - Override UIViewControllerExtension

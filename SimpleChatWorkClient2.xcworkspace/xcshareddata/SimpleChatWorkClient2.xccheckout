@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>EAC9107E-1897-432B-AA72-38434606567D</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SimpleChatWorkClient2</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>24C8AC6104CD6A03E03466799F0E8F55196F0475</key>
+		<string>github-private:masaplabs/SimpleChatWorkClient2</string>
+		<key>95438028B10BBB846574013D29F154A00556A9D1</key>
+		<string>github.com:Quick/Nimble.git</string>
+		<key>D0725CAC6FF2D66F2C83C2C48DC12106D42DAA64</key>
+		<string>github.com:Quick/Quick.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SimpleChatWorkClient2.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>24C8AC6104CD6A03E03466799F0E8F55196F0475</key>
+		<string>..</string>
+		<key>95438028B10BBB846574013D29F154A00556A9D1</key>
+		<string>../../Vendor/Nimble</string>
+		<key>D0725CAC6FF2D66F2C83C2C48DC12106D42DAA64</key>
+		<string>../../Vendor/Quick</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github-private:masaplabs/SimpleChatWorkClient2</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>24C8AC6104CD6A03E03466799F0E8F55196F0475</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>95438028B10BBB846574013D29F154A00556A9D1</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Nimble</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D0725CAC6FF2D66F2C83C2C48DC12106D42DAA64</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Quick</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>24C8AC6104CD6A03E03466799F0E8F55196F0475</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SimpleChatWorkClient2</string>
+		</dict>
+	</array>
+</dict>
+</plist>

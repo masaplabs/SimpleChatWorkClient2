@@ -34,7 +34,7 @@ enum MimeType: String {
     }
 }
 
-class NCWData {
+class NetData {
     let data: NSData
     let mimeType: MimeType
     let filename: String

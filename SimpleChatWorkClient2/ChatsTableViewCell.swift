@@ -15,6 +15,7 @@ class ChatsTableViewCell: UITableViewCell {
     var titleLabel = UILabel(forAutoLayout: ())
     var subtitleLabel = UILabel(forAutoLayout: ())
     var roomIconView = UIImageView(forAutoLayout: ())
+    var pinIconView = UIImageView(forAutoLayout: ())
     var accountId: Int?
     
     // MARK: - Init
@@ -51,13 +52,18 @@ class ChatsTableViewCell: UITableViewCell {
         subtitleLabel.textColor = UIColor.grayColor()
         
         // アイコン設定
-        let image = UIImage(named: "placeholder.png")
+        let image = UIImage(named: "placeholder")
         roomIconView = UIImageView(image: image)
+        
+        // ピン設定
+        let pinImage = UIImage(named: "pin_off")
+        pinIconView = UIImageView(image: pinImage)
         
         // SubView にセットする
         contentView.addSubview(titleLabel)
         contentView.addSubview(subtitleLabel)
         contentView.addSubview(roomIconView)
+        contentView.addSubview(pinIconView)
     }
     
     // MARK - Override
@@ -71,12 +77,16 @@ class ChatsTableViewCell: UITableViewCell {
         titleLabel.autoSetDimension(ALDimension.Height, toSize: 20)
         titleLabel.autoPinEdgeToSuperviewEdge(ALEdge.Top, withInset: 4)
         titleLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: roomIconView, withOffset: 4)
-        titleLabel.autoPinEdgeToSuperviewEdge(ALEdge.Trailing, withInset: 10)
+        titleLabel.autoPinEdgeToSuperviewEdge(ALEdge.Trailing, withInset: 30)
         
         subtitleLabel.autoSetDimension(ALDimension.Height, toSize: 20)
         subtitleLabel.autoPinEdgeToSuperviewEdge(ALEdge.Bottom, withInset: 2)
         subtitleLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: roomIconView, withOffset: 4)
         subtitleLabel.autoPinEdgeToSuperviewEdge(ALEdge.Trailing, withInset: 10)
+        
+        pinIconView.autoSetDimensionsToSize(CGSizeMake(20, 20))
+        pinIconView.autoPinEdgeToSuperviewEdge(ALEdge.Top, withInset: 12)
+        pinIconView.autoPinEdgeToSuperviewEdge(ALEdge.Right, withInset: 10)
         
         super.updateConstraints()
     }

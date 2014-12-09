@@ -33,9 +33,9 @@ class RequestSerialization {
         
         if params != nil {
             // GET
-            if NCWHelper.isQueryParams(method) {
+            if NetHelper.isQueryParams(method) {
                 // send with query params
-                let query = NCWHelper.queryStringFromParams(params!)
+                let query = NetHelper.queryStringFromParams(params!)
                 let newUrlString = urlString.stringByAppendingString("?\(query)")
                 request.URL = NSURL(string: newUrlString)
             }
@@ -43,16 +43,16 @@ class RequestSerialization {
                 var contentType: String?
                 var paramsData: NSData?
                 
-                if NCWHelper.isMultiPart(params!) {
+                if NetHelper.isMultiPart(params!) {
                     // multi-part for sending large quantities of binary data (as image)
                     let boundary = "NET-POST-boundary-\(arc4random())-\(arc4random())"
-                    paramsData = NCWHelper.dataFromParamsWithBoundary(params!, boundary: boundary)
+                    paramsData = NetHelper.dataFromParamsWithBoundary(params!, boundary: boundary)
                     contentType = "multipart/form-data; boundary=\(boundary)"
                 }
                 else {
                     // UTF8 url-encoded body for simple params
                     contentType = "application/x-www-form-urlencoded"
-                    let query = NCWHelper.queryStringFromParams(params!)
+                    let query = NetHelper.queryStringFromParams(params!)
                     paramsData = query.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
                 }
                 

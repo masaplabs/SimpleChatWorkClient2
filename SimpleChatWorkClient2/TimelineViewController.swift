@@ -62,6 +62,7 @@ class TimelineViewController: JSQMessagesViewController ,FrostedSidebarDelegate 
         // タイムライン設定
         self.showLoadEarlierMessagesHeader = true
         self.automaticallyScrollsToMostRecentMessage = true
+        self.collectionView.collectionViewLayout.messageBubbleFont = UIFont(name: "HelveticaNeue", size: 14)
         
         // 自分自身の ID を指定（アバター表示に必要）
         self.senderId = String(viewModel.myAccountId)
@@ -214,6 +215,18 @@ class TimelineViewController: JSQMessagesViewController ,FrostedSidebarDelegate 
         
         let attributes : [NSObject:AnyObject] = [NSForegroundColorAttributeName: UIColor(rgba: "#1F43DF"), NSUnderlineStyleAttributeName: 1]
         cell.textView.linkTextAttributes = attributes
+        
+        // TODO: エモーティコン変換
+//        let message: MessageModel = viewModel.messages[indexPath.item]
+//        let labelFont = [NSForegroundColorAttributeName: UIColor.blackColor(), NSFontAttributeName: UIFont(name: "HelveticaNeue", size: 12)!]
+//        var attributedString = NSMutableAttributedString()
+//        attributedString.appendAttributedString(NSAttributedString(string: message.body, attributes: labelFont))
+//        var textAttachment = NSTextAttachment()
+//        textAttachment.image = UIImage(named: "emo_bow")
+//        attributedString.appendAttributedString(NSAttributedString(attachment: textAttachment))
+//        
+//        
+//        cell.textView.attributedText = attributedString
         
         return cell
     }

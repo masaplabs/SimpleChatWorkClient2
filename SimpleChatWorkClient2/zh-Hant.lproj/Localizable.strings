@@ -19,6 +19,8 @@
 "Need ChatRoom Description" = "未輸入群組交談描述";
 "Information" = "資訊";
 "Files" = "檔案";
+"To" = "To";
+"Unread" = "未讀取";
 
 // タスクタブ
 "Add Task" = "新增工作";

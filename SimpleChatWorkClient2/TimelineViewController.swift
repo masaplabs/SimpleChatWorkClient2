@@ -225,7 +225,6 @@ class TimelineViewController: JSQMessagesViewController ,FrostedSidebarDelegate 
 //        textAttachment.image = UIImage(named: "emo_bow")
 //        attributedString.appendAttributedString(NSAttributedString(attachment: textAttachment))
 //        
-//        
 //        cell.textView.attributedText = attributedString
         
         return cell

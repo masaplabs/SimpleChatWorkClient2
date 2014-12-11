@@ -88,11 +88,6 @@ class FilesViewController: UITableViewController {
                 controller.showFromController(self, withCompletion: nil)
             })
         })
-        
-//        dispatch_async(dispatch_get_main_queue(), {
-//            let controller: JBWebViewController = JBWebViewController(url: NSURL(string: self.url))
-//            controller.show()
-//        }
     }
     
     // MARK: - Private Method

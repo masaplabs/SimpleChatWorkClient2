@@ -61,10 +61,10 @@ class ContactsViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         // Cell を作成する
-        var cell : ChatsTableViewCell? = self.tableView.dequeueReusableCellWithIdentifier(tableViewCellIdentifier) as? ChatsTableViewCell
+        var cell : RoomMembersViewCell? = self.tableView.dequeueReusableCellWithIdentifier(tableViewCellIdentifier) as? RoomMembersViewCell
         
         if ((cell) == nil) {
-            cell = ChatsTableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: tableViewCellIdentifier)
+            cell = RoomMembersViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: tableViewCellIdentifier)
         }
         
         self.updateCell(cell!, indexPath: indexPath)
@@ -85,7 +85,7 @@ class ContactsViewController: UITableViewController {
     
     // MARK: - Private Method
     
-    func updateCell(cell: ChatsTableViewCell, indexPath: NSIndexPath) {
+    func updateCell(cell: RoomMembersViewCell, indexPath: NSIndexPath) {
         // モデルを持っている場合のみ
         if (viewModel.contacts.count > 0) {
             let contactModel: ContactModel = viewModel.contacts[indexPath.row]

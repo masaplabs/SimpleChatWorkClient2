@@ -64,10 +64,10 @@ class ChooseContactTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         // Cell を作成する
-        var cell : ChatsTableViewCell? = self.tableView.dequeueReusableCellWithIdentifier(tableViewCellIdentifier) as? ChatsTableViewCell
+        var cell : RoomMembersViewCell? = self.tableView.dequeueReusableCellWithIdentifier(tableViewCellIdentifier) as? RoomMembersViewCell
         
         if ((cell) == nil) {
-            cell = ChatsTableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: tableViewCellIdentifier)
+            cell = RoomMembersViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: tableViewCellIdentifier)
         }
         
         self.updateCell(cell!, indexPath: indexPath)
@@ -80,7 +80,7 @@ class ChooseContactTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        var cell: ChatsTableViewCell = tableView.cellForRowAtIndexPath(indexPath) as ChatsTableViewCell
+        var cell: RoomMembersViewCell = tableView.cellForRowAtIndexPath(indexPath) as RoomMembersViewCell
         if let i = find(parentController.selectedMemberIds, cell.accountId!) {
             parentController.selectedMemberIds.removeAtIndex(i)
             cell.accessoryType = .None
@@ -94,7 +94,7 @@ class ChooseContactTableViewController: UITableViewController {
     
     // MARK: - Private Method
     
-    func updateCell(cell: ChatsTableViewCell, indexPath: NSIndexPath) {
+    func updateCell(cell: RoomMembersViewCell, indexPath: NSIndexPath) {
         // モデルを持っている場合のみ
         if (viewModel.members.count > 0) {
             let contactModel: ContactModel = viewModel.members[indexPath.row]

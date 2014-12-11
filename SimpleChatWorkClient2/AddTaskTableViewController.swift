@@ -41,11 +41,11 @@ class AddTaskTableViewController: UIViewController, UITableViewDelegate, UITable
         view.backgroundColor = UIColor.whiteColor()
         
         // 閉じるボタン
-        let closeButton: UIBarButtonItem = UIBarButtonItem(title: "Close", style: UIBarButtonItemStyle.Bordered, target: self, action: "closeView")
+        let closeButton: UIBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Close", value: "Close", comment: "閉じる"), style: UIBarButtonItemStyle.Bordered, target: self, action: "closeView")
         navigationItem.leftBarButtonItem = closeButton
         
         // 送信ボタン
-        let sendButton: UIBarButtonItem = UIBarButtonItem(title: "Send", style: UIBarButtonItemStyle.Done, target: self, action: "sendTask")
+        let sendButton: UIBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Send", value: "Send", comment: "送信"), style: UIBarButtonItemStyle.Done, target: self, action: "sendTask")
         navigationItem.rightBarButtonItem = sendButton
         
         // TableView 作成

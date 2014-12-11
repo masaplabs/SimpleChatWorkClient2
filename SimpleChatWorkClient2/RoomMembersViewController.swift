@@ -45,7 +45,7 @@ class RoomMembersViewController: UITableViewController, FrostedSidebarDelegate {
         super.viewDidLoad()
         
         // 閉じるボタン
-        let closeButton: UIBarButtonItem = UIBarButtonItem(title: "Close", style: UIBarButtonItemStyle.Bordered, target: self, action: "closeView")
+        let closeButton: UIBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Close", value: "Close", comment: "閉じる"), style: UIBarButtonItemStyle.Bordered, target: self, action: "closeView")
         navigationItem.leftBarButtonItem = closeButton
         
         // TODO: サイドメニューは機能が重いためあとで実装

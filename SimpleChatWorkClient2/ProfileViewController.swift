@@ -64,7 +64,7 @@ class ProfileViewController: UIViewController, ProfileViewControllerDelegate {
         
         if (viewModel.accountId == nil) {
             // サインアウトボタンは My タブを開いているときだけ表示する
-            var signoutButton = UIBarButtonItem(title: "Signout", style: .Plain, target: self, action: "openSignInView")
+            var signoutButton = UIBarButtonItem(title: NSLocalizedString("Signout", value: "Signout", comment: "ログアウト"), style: .Plain, target: self, action: "openSignInView")
             self.navigationItem.rightBarButtonItem = signoutButton
             
             // 自分の情報を取得

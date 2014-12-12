@@ -95,31 +95,6 @@ class SignInViewController: UIViewController {
                 })
             })
         })
-        
-//        apiManager.signIn(tokenText.text, success: {ResponseData in
-//            var responseData = ResponseData.json(error:nil)
-//            if ((responseData) != nil) {
-//                // ログイントークンをキーチェーンに保存
-//                KeychainService.save("LoginToken", value: self.tokenText.text)
-//                
-//                // ログインウインドウを閉じる
-//                self.dismissViewControllerAnimated(false, completion: {
-//                    if (self.delegate != nil) {
-//                        self.delegate!.getRoomAndReloadTable()
-//                    }
-//                })
-//            } else {
-//                KeychainService.delete("LoginToken")
-//                
-//                // ログイン失敗アラートを出す
-//                
-//            }
-//        }, error: {error in
-//            println(error)
-//            
-//            // ログイン失敗アラートを出す
-//            
-//        })
     }
 }
 

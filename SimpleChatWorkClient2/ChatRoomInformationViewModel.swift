@@ -45,8 +45,7 @@ class ChatRoomInformationViewModel: NSObject {
         role = model.role
         iconPath = model.iconPath
         
-        apiManager.getRoomDetail(roomId,{responseData in
-            let roomModel: JSON = responseData.json(error:nil)!
+        apiManager.getRoomDetail(roomId, {roomModel in
             model.roomDescription = roomModel["description"].stringValue
             
             self.roomDescription = model.roomDescription

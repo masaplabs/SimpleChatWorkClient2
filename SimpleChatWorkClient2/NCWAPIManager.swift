@@ -12,7 +12,7 @@ class NCWAPIManager {
     
     var httpClient: NCWHttpClient!
     
-    typealias SuccessHandler = (ResponseData) -> ()
+    typealias SuccessHandler = (JSON!) -> ()
     typealias FailureHandler = (NSError!) -> ()
 
     // シングルトンパターン
@@ -111,15 +111,17 @@ class NCWAPIManager {
         self.putRequest("rooms/\(roomId)", params: ["name": name, "description": description], success: success, error: error)
     }
     
-    private func getRequest(apiString: String, params: NSDictionary?, success: SuccessHandler, error: FailureHandler) {
+    // MARK: - Private Method
+    
+    private func getRequest(apiString: String, params: [String: AnyObject]?, success: SuccessHandler, error: FailureHandler) {
         httpClient.GET(apiString, params: params, successHandler: success, failureHandler: error)
     }
     
-    private func postRequest(apiString: String, params: NSDictionary?, success: SuccessHandler, error: FailureHandler) {
+    private func postRequest(apiString: String, params: [String: AnyObject]?, success: SuccessHandler, error: FailureHandler) {
         httpClient.POST(apiString, params: params, successHandler: success, failureHandler: error)
     }
     
-    private func putRequest(apiString: String, params: NSDictionary?, success: SuccessHandler, error: FailureHandler) {
+    private func putRequest(apiString: String, params: [String: AnyObject]?, success: SuccessHandler, error: FailureHandler) {
         httpClient.PUT(apiString, params: params, successHandler: success, failureHandler: error)
     }
 }

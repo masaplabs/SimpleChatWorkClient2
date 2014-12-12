@@ -38,9 +38,8 @@ class ContactListModel: NSObject {
         // append するため最初に空にする
         contacts = []
         
-        apiManager.getContacts({responseData in
+        apiManager.getContacts({contactModels in
             // コンタクトリストからコンタクトモデルを作成し、 contacts リストに入れていく
-            let contactModels: JSON! = responseData.json(error:nil)
             for var i = 0, num = contactModels.arrayValue?.count; i < num; i++ {
                 var contactModel: JSON = contactModels[i]
                 self.contacts.append(ContactModel(json: contactModel))

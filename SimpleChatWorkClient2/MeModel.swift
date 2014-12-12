@@ -51,8 +51,7 @@ class MeModel: NSObject {
     // MARK: - Public Method
     
     func getMy() {
-        apiManager.getMy({responseData in
-            let model: JSON! = responseData.json(error:nil)
+        apiManager.getMy({model in
             self.setModel(model)
         }, error: {error in
             println("自分の情報読み込み失敗")
@@ -60,11 +59,10 @@ class MeModel: NSObject {
     }
     
     func signIn(token: String, callback: () -> Void) {
-        apiManager.signIn(token, success: {responseData in
+        apiManager.signIn(token, success: {model in
             // ログイントークンをキーチェーンに保存
             KeychainService.save("LoginToken", value: token)
             
-            let model: JSON! = responseData.json(error:nil)
             self.setModel(model)
             
             callback()

@@ -26,10 +26,6 @@
 		C3616F9319D3C1940086EF97 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3616F9119D3C1940086EF97 /* LaunchScreen.xib */; };
 		C3616FAD19D3C4270086EF97 /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3616FAC19D3C4270086EF97 /* ChatsViewController.swift */; };
 		C3616FB019D3DE770086EF97 /* NCWHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3616FAF19D3DE770086EF97 /* NCWHttpClient.swift */; };
-		C3616FB219D3EB280086EF97 /* NetResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3616FB119D3EB280086EF97 /* NetResponseData.swift */; };
-		C3616FB419D3EF190086EF97 /* NetRequestSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3616FB319D3EF190086EF97 /* NetRequestSerialization.swift */; };
-		C3616FB619D3EF6B0086EF97 /* NetHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3616FB519D3EF6B0086EF97 /* NetHelper.swift */; };
-		C3616FB819D3EFE50086EF97 /* NetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3616FB719D3EFE50086EF97 /* NetData.swift */; };
 		C368D0631A2427B60013F8BB /* RoomMembersViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C368D0621A2427B60013F8BB /* RoomMembersViewCell.swift */; };
 		C36D3EB61A00E32A008A4F69 /* FrostedSidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36D3EB51A00E32A008A4F69 /* FrostedSidebar.swift */; };
 		C37221391A1AF31D00182279 /* ChatRoomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37221381A1AF31D00182279 /* ChatRoomModel.swift */; };
@@ -58,6 +54,7 @@
 		C3C4E8101A1EEB51000B978D /* RoomMembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C4E80F1A1EEB51000B978D /* RoomMembersViewController.swift */; };
 		C3CA013719E7DFF50053C6A2 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CA013619E7DFF50053C6A2 /* TimelineViewController.swift */; };
 		C3CA013919E7ECA70053C6A2 /* ChatRoomInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CA013819E7ECA70053C6A2 /* ChatRoomInformationViewController.swift */; };
+		C3DB4A541A398688005F28AC /* Alamofire.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = C3DB4A4E1A39860E005F28AC /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C3E1BCE51A28494800CFC15F /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E1BCE41A28494800CFC15F /* UIViewControllerExtension.swift */; };
 		C3E1BCF51A2C3B4F00CFC15F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3E1BCF71A2C3B4F00CFC15F /* Localizable.strings */; };
 		C3E1BCFC1A2C5FC600CFC15F /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E1BCFB1A2C5FC600CFC15F /* MessageModel.swift */; };
@@ -84,7 +81,42 @@
 			remoteGlobalIDString = C3616F7F19D3C1940086EF97;
 			remoteInfo = SimpleChatWorkClient2;
 		};
+		C3DB4A4D1A39860E005F28AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3DB4A481A39860E005F28AC /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3319A95C8B0040E7D1;
+			remoteInfo = Alamofire;
+		};
+		C3DB4A4F1A39860E005F28AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3DB4A481A39860E005F28AC /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3E19A95C8B0040E7D1;
+			remoteInfo = AlamofireTests;
+		};
+		C3DB4A511A398632005F28AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3DB4A481A39860E005F28AC /* Alamofire.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
+			remoteInfo = Alamofire;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C3DB4A531A398654005F28AC /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C3DB4A541A398688005F28AC /* Alamofire.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		33D9BEE720F62532D9D1F2F0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,10 +144,6 @@
 		C3616F9D19D3C1940086EF97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3616FAC19D3C4270086EF97 /* ChatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatsViewController.swift; sourceTree = "<group>"; };
 		C3616FAF19D3DE770086EF97 /* NCWHttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NCWHttpClient.swift; sourceTree = "<group>"; };
-		C3616FB119D3EB280086EF97 /* NetResponseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetResponseData.swift; sourceTree = "<group>"; };
-		C3616FB319D3EF190086EF97 /* NetRequestSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetRequestSerialization.swift; sourceTree = "<group>"; };
-		C3616FB519D3EF6B0086EF97 /* NetHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetHelper.swift; sourceTree = "<group>"; };
-		C3616FB719D3EFE50086EF97 /* NetData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetData.swift; sourceTree = "<group>"; };
 		C368D0621A2427B60013F8BB /* RoomMembersViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomMembersViewCell.swift; sourceTree = "<group>"; };
 		C36D3EB51A00E32A008A4F69 /* FrostedSidebar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrostedSidebar.swift; sourceTree = "<group>"; };
 		C37221381A1AF31D00182279 /* ChatRoomModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRoomModel.swift; sourceTree = "<group>"; };
@@ -145,6 +173,7 @@
 		C3C4E80F1A1EEB51000B978D /* RoomMembersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomMembersViewController.swift; sourceTree = "<group>"; };
 		C3CA013619E7DFF50053C6A2 /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		C3CA013819E7ECA70053C6A2 /* ChatRoomInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRoomInformationViewController.swift; sourceTree = "<group>"; };
+		C3DB4A481A39860E005F28AC /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = SOURCE_ROOT; };
 		C3E1BCE41A28494800CFC15F /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		C3E1BCF61A2C3B4F00CFC15F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C3E1BCF91A2C3B8B00CFC15F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -247,6 +276,7 @@
 				C3616F8319D3C1940086EF97 /* Supporting Files */,
 				C3BEBFB319E67D7800B4C5E1 /* SimpleChatWorkClient2-Bridging-Header.h */,
 				C3E1BCF71A2C3B4F00CFC15F /* Localizable.strings */,
+				C3DB4A481A39860E005F28AC /* Alamofire.xcodeproj */,
 			);
 			path = SimpleChatWorkClient2;
 			sourceTree = "<group>";
@@ -310,10 +340,6 @@
 			isa = PBXGroup;
 			children = (
 				C3616FAF19D3DE770086EF97 /* NCWHttpClient.swift */,
-				C3616FB119D3EB280086EF97 /* NetResponseData.swift */,
-				C3616FB319D3EF190086EF97 /* NetRequestSerialization.swift */,
-				C3616FB519D3EF6B0086EF97 /* NetHelper.swift */,
-				C3616FB719D3EFE50086EF97 /* NetData.swift */,
 				C3A2825519D903C600BB2466 /* NCWAPIManager.swift */,
 			);
 			name = MobileKit;
@@ -421,6 +447,15 @@
 			name = Contacts;
 			sourceTree = "<group>";
 		};
+		C3DB4A491A39860E005F28AC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C3DB4A4E1A39860E005F28AC /* Alamofire.framework */,
+				C3DB4A501A39860E005F28AC /* AlamofireTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		C3E789091A1329C300D17C05 /* RAC */ = {
 			isa = PBXGroup;
 			children = (
@@ -468,10 +503,12 @@
 				C3616F7D19D3C1940086EF97 /* Frameworks */,
 				C3616F7E19D3C1940086EF97 /* Resources */,
 				CB01AF62F8B6EBFA785EDB5B /* Copy Pods Resources */,
+				C3DB4A531A398654005F28AC /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C3DB4A521A398632005F28AC /* PBXTargetDependency */,
 			);
 			name = SimpleChatWorkClient2;
 			productName = SimpleChatWorkClient2;
@@ -528,6 +565,12 @@
 			mainGroup = C3616F7719D3C1940086EF97;
 			productRefGroup = C3616F8119D3C1940086EF97 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = C3DB4A491A39860E005F28AC /* Products */;
+					ProjectRef = C3DB4A481A39860E005F28AC /* Alamofire.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				C3616F7F19D3C1940086EF97 /* SimpleChatWorkClient2 */,
@@ -535,6 +578,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		C3DB4A4E1A39860E005F28AC /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = C3DB4A4D1A39860E005F28AC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C3DB4A501A39860E005F28AC /* AlamofireTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = AlamofireTests.xctest;
+			remoteRef = C3DB4A4F1A39860E005F28AC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		C3616F7E19D3C1940086EF97 /* Resources */ = {
@@ -595,10 +655,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3616F8B19D3C1940086EF97 /* SignInViewController.swift in Sources */,
-				C3616FB219D3EB280086EF97 /* NetResponseData.swift in Sources */,
 				C3E1BCE51A28494800CFC15F /* UIViewControllerExtension.swift in Sources */,
 				C3CA013919E7ECA70053C6A2 /* ChatRoomInformationViewController.swift in Sources */,
-				C3616FB819D3EFE50086EF97 /* NetData.swift in Sources */,
 				C36D3EB61A00E32A008A4F69 /* FrostedSidebar.swift in Sources */,
 				C37F2E1C1A15FADA009E82EE /* AddChatRoomViewController.swift in Sources */,
 				C3EE7F071A1C46CE00E6F062 /* ContactListModel.swift in Sources */,
@@ -619,7 +677,6 @@
 				C33300231A08A9370086F533 /* ChooseContactTableViewController.swift in Sources */,
 				C373D39E19F11C9C00764703 /* TasksTableViewCell.swift in Sources */,
 				C32825321A022CC300F384CC /* AddTaskTableViewController.swift in Sources */,
-				C3616FB619D3EF6B0086EF97 /* NetHelper.swift in Sources */,
 				C380477F1A25DD7C00BEC275 /* LTMorphingLabel.swift in Sources */,
 				C3254B3B1A199503009A066D /* MeModel.swift in Sources */,
 				C38047831A25DDE400BEC275 /* LTEasing.swift in Sources */,
@@ -629,7 +686,6 @@
 				C39E4F001A26CCAD00C9CA00 /* FilesViewController.swift in Sources */,
 				C37221391A1AF31D00182279 /* ChatRoomModel.swift in Sources */,
 				C3616FB019D3DE770086EF97 /* NCWHttpClient.swift in Sources */,
-				C3616FB419D3EF190086EF97 /* NetRequestSerialization.swift in Sources */,
 				C3BFD4E319E5342600C7DDBD /* ChatsTableViewCell.swift in Sources */,
 				C3C4E8101A1EEB51000B978D /* RoomMembersViewController.swift in Sources */,
 				C3EE7F111A1C7DEE00E6F062 /* TaskListModel.swift in Sources */,
@@ -674,6 +730,11 @@
 			isa = PBXTargetDependency;
 			target = C3616F7F19D3C1940086EF97 /* SimpleChatWorkClient2 */;
 			targetProxy = C3616F9919D3C1940086EF97 /* PBXContainerItemProxy */;
+		};
+		C3DB4A521A398632005F28AC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Alamofire;
+			targetProxy = C3DB4A511A398632005F28AC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

@@ -12,6 +12,8 @@
 	<dict>
 		<key>24C8AC6104CD6A03E03466799F0E8F55196F0475</key>
 		<string>github-private:masaplabs/SimpleChatWorkClient2</string>
+		<key>67620B5EFA902936DF04070AF595B76AB0333747</key>
+		<string>https://github.com/Alamofire/Alamofire.git</string>
 		<key>95438028B10BBB846574013D29F154A00556A9D1</key>
 		<string>github.com:Quick/Nimble.git</string>
 		<key>D0725CAC6FF2D66F2C83C2C48DC12106D42DAA64</key>
@@ -23,6 +25,8 @@
 	<dict>
 		<key>24C8AC6104CD6A03E03466799F0E8F55196F0475</key>
 		<string>..</string>
+		<key>67620B5EFA902936DF04070AF595B76AB0333747</key>
+		<string>../Alamofire</string>
 		<key>95438028B10BBB846574013D29F154A00556A9D1</key>
 		<string>../../Vendor/Nimble</string>
 		<key>D0725CAC6FF2D66F2C83C2C48DC12106D42DAA64</key>
@@ -36,6 +40,14 @@
 	<string>24C8AC6104CD6A03E03466799F0E8F55196F0475</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>67620B5EFA902936DF04070AF595B76AB0333747</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Alamofire</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 enum HttpMethod: String {
     case GET = "GET"
@@ -22,17 +23,15 @@ class NCWHttpClient: NSObject, NSURLSessionDataDelegate, NSURLSessionTaskDelegat
     
     var HTTPMaximumconnectionsPerHost: Int = 5
     
-    private var session: NSURLSession
     private var sessionConfig: NSURLSessionConfiguration
+    private var manager: Manager
+    private var request: Alamofire.Request?
     
-    private var requestSerializer: RequestSerialization
-    
-    typealias SuccessHandler = (ResponseData) -> ()
+    typealias SuccessHandler = (JSON!) -> ()
     typealias FailureHandler = (NSError!) -> ()
     
     override init() {
         baseURL = NSURL(string: "https://api.chatwork.com/v1/")!
-        requestSerializer = RequestSerialization()
         
         sessionConfig = NSURLSessionConfiguration.defaultSessionConfiguration()
         sessionConfig.allowsCellularAccess = true
@@ -40,54 +39,46 @@ class NCWHttpClient: NSObject, NSURLSessionDataDelegate, NSURLSessionTaskDelegat
         sessionConfig.timeoutIntervalForResource = 60.0
         sessionConfig.HTTPMaximumConnectionsPerHost = HTTPMaximumconnectionsPerHost
         
-        session = NSURLSession(configuration: sessionConfig)
+        manager = Alamofire.Manager(configuration: sessionConfig)
     }
     
     func setAPIToken(token: NSString) -> Void {
         apiToken = token
-        session.configuration.HTTPAdditionalHeaders = ["Accept": "application/json,application/xml,image/png,image/jpeg", "X-ChatWorkToken": apiToken, "User-Agent": "NCW iOS Client/2.0.0"]
+        manager.session.configuration.HTTPAdditionalHeaders = ["Accept": "application/json,application/xml,image/png,image/jpeg", "X-ChatWorkToken": apiToken, "User-Agent": "NCW iOS Client/2.0.0"]
     }
     
-    func GET(url: String, params: NSDictionary?, successHandler: SuccessHandler, failureHandler: FailureHandler) -> NSURLSessionTask {
-        return httpRequest(.GET, url: url, params: params, successHandler: successHandler, failurHandler: failureHandler)
+    func GET(url: String, params: [String: AnyObject]?, successHandler: SuccessHandler, failureHandler: FailureHandler) -> Request {
+        return httpRequest(Alamofire.Method.GET, url: url, params: params, successHandler: successHandler, failureHandler: failureHandler)
     }
     
-    func POST(url: String, params: NSDictionary?, successHandler: SuccessHandler, failureHandler: FailureHandler) -> NSURLSessionTask {
-        return httpRequest(.POST, url: url, params: params, successHandler: successHandler, failurHandler: failureHandler)
+    func POST(url: String, params: [String: AnyObject]?, successHandler: SuccessHandler, failureHandler: FailureHandler) -> Request {
+        return httpRequest(Alamofire.Method.POST, url: url, params: params, successHandler: successHandler, failureHandler: failureHandler)
     }
     
-    func PUT(url: String, params: NSDictionary?, successHandler: SuccessHandler, failureHandler: FailureHandler) -> NSURLSessionTask {
-        return httpRequest(.PUT, url: url, params: params, successHandler: successHandler, failurHandler: failureHandler)
+    func PUT(url: String, params: [String: AnyObject]?, successHandler: SuccessHandler, failureHandler: FailureHandler) -> Request {
+        return httpRequest(Alamofire.Method.PUT, url: url, params: params, successHandler: successHandler, failureHandler: failureHandler)
     }
     
-    func DELETE(url: String, params: NSDictionary?, successHandler: SuccessHandler, failureHandler: FailureHandler) -> NSURLSessionTask {
-        return httpRequest(.DELETE, url: url, params: params, successHandler: successHandler, failurHandler: failureHandler)
+    func DELETE(url: String, params: [String: AnyObject]?, successHandler: SuccessHandler, failureHandler: FailureHandler) -> Request {
+        return httpRequest(Alamofire.Method.DELETE, url: url, params: params, successHandler: successHandler, failureHandler: failureHandler)
     }
     
     // MARK: - Private Method
     
-    private func httpRequest(method: HttpMethod, url: String, params: NSDictionary?, successHandler: SuccessHandler, failurHandler: FailureHandler, isAbsoluteUrl: Bool = false) -> NSURLSessionTask {
-        let urlString = isAbsoluteUrl ? url : NSURL(string: url, relativeToURL: baseURL)?.absoluteString
+    private func httpRequest(method: Alamofire.Method, url: String, params: [String: AnyObject]?, successHandler: SuccessHandler, failureHandler: FailureHandler) -> Request {
+        let urlString = NSURL(string: url, relativeToURL: baseURL)!.absoluteString!
         
-        println("HTTP Request: [\(method.rawValue)] " + urlString!)
+        println("HTTP Request: [\(method.rawValue)] " + urlString)
         
-        let request = requestSerializer.requestWithMethod(method, urlString: urlString!, params: params, error: nil)
-        let task = createSessionTaskWithRequest(request, successHandler: successHandler, failureHandler: failurHandler)
-        task.resume()
-        return task
-    }
-    
-    private func createSessionTaskWithRequest(request: NSURLRequest, successHandler: SuccessHandler, failureHandler: FailureHandler) -> NSURLSessionTask {
-        let task = session.dataTaskWithRequest(request, completionHandler:{
-            (data, response, error) in
+        request = manager.request(method, urlString, parameters: params)
+        request?.responseJSON({ (request, response, data, error) -> Void in
             if (error != nil) {
                 failureHandler(error)
             } else {
-                let responseData = ResponseData(response: response, data: data)
-                successHandler(responseData)
+                successHandler(JSON(object: data!))
             }
         })
         
-        return task
+        return request!
     }
 }

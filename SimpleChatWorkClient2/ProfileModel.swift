@@ -41,11 +41,10 @@ class ProfileModel: NSObject {
     // MARK: - Public Method
     
     func getMy() {
-        apiManager.getMy({responseData in
-            let model: JSON! = responseData.json(error:nil)
+        apiManager.getMy({model in
             self.setModel(model)
-            }, error: {error in
-                println("自分の情報読み込み失敗")
+        }, error: {error in
+            println("自分の情報読み込み失敗")
         })
     }
     

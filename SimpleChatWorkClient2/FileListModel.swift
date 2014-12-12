@@ -38,9 +38,8 @@ class FileListModel: NSObject {
         // append するため最初に空にする
         files = []
         
-        apiManager.getFiles(roomId, {responseData in
+        apiManager.getFiles(roomId, {fileModels in
             // タスクリストからタスクモデルを作成し、 tasks リストに入れていく
-            let fileModels: JSON! = responseData.json(error:nil)
             for var i = 0, num = fileModels.arrayValue?.count; i < num; i++ {
                 var fileModel: JSON = fileModels[i]
                 self.files.append(FileModel(json: fileModel))
@@ -54,8 +53,7 @@ class FileListModel: NSObject {
     
     // ファイルダウンロードURLを取得する
     func getFileURLById(roomId: Int, fileId: Int, callback: (String) -> ()) {
-        apiManager.getFileURLById(roomId, fileId: fileId, success: {responseData in
-            let fileModel: JSON! = responseData.json(error:nil)
+        apiManager.getFileURLById(roomId, fileId: fileId, success: {fileModel in
             let downloadURL: String! = fileModel["download_url"].stringValue
             
             callback(downloadURL)

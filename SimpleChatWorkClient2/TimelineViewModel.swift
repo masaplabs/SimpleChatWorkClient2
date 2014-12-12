@@ -60,9 +60,8 @@ class TimelineViewModel: NSObject {
     func getMessages(force: Bool, callback: () -> ()) {
         messages = []
         
-        apiManager.getMessages(chatRoomId, force: force, success: {responseData in
+        apiManager.getMessages(chatRoomId, force: force, success: {messageModels in
             // メッセージリストからメッセージモデルを作成し、 messages リストに入れていく
-            let messageModels: JSON! = responseData.json(error:nil)
             for var i = 0, num = messageModels.arrayValue?.count; i < num; i++ {
                 var messageModel: JSON = messageModels[i]
                 let model: MessageModel = MessageModel(json: messageModel)

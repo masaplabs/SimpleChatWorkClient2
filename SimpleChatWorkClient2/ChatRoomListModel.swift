@@ -38,9 +38,8 @@ class ChatRoomListModel: NSObject {
         // append するため最初に空にする
         chats = []
         
-        apiManager.getRooms({responseData in
+        apiManager.getRooms({roomModels in
             // チャットルームリストからチャットルームモデルを作成し、 chats リストに入れていく
-            let roomModels: JSON! = responseData.json(error:nil)
             for var i = 0, num = roomModels.arrayValue?.count; i < num; i++ {
                 var roomModel: JSON = roomModels[i]
                 self.chats.append(ChatRoomModel(json: roomModel))
@@ -67,8 +66,7 @@ class ChatRoomListModel: NSObject {
     
     // ID から ChatRoom のメンバーリストを取得する
     func getRoomMembersById(roomId: Int, callback: (AnyObject?) -> ()) {
-        apiManager.getRoomMembers(roomId, success: {responseData in
-            let memberModels: JSON = responseData.json(error:nil)!
+        apiManager.getRoomMembers(roomId, success: {memberModels in
             var members: Array<ContactModel> = []
             
             for var i = 0, num = memberModels.arrayValue?.count; i < num; i++ {

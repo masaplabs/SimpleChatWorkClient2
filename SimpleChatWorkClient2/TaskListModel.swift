@@ -38,9 +38,8 @@ class TaskListModel: NSObject {
         // append するため最初に空にする
         tasks = []
         
-        apiManager.getTasks({responseData in
+        apiManager.getTasks({taskModels in
             // タスクリストからタスクモデルを作成し、 tasks リストに入れていく
-            let taskModels: JSON! = responseData.json(error:nil)
             for var i = 0, num = taskModels.arrayValue?.count; i < num; i++ {
                 var taskModel: JSON = taskModels[i]
                 self.tasks.append(TaskModel(json: taskModel))
